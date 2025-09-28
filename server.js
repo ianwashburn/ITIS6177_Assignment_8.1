@@ -284,9 +284,9 @@ app.delete('/customer/:CUST_CODE', async (req, res) => {
  *       - Customer
  *     parameters:
  *       - in: path
- *         name: cust_code
+ *         name: CUST_CODE
  *         required: true
- *         description: customer code of the customer to update
+ *         description: update customer using customer code
  *         schema:
  *           type: string
  *     requestBody:
@@ -335,6 +335,9 @@ app.delete('/customer/:CUST_CODE', async (req, res) => {
 app.put('/customer/:CUST_CODE', async (req,res) => {
   try {
     await pool.getConnection();
+    console.log("params:", req.params);
+    console.log("query:", req.query);
+    console.log("body:", req.body);
     const { CUST_CODE } = req.params;
     const { CUST_NAME, CUST_CITY, WORKING_AREA, CUST_COUNTRY, GRADE, OPENING_AMT, RECEIVE_AMT, PAYMENT_AMT, OUTSTANDING_AMT, PHONE_NO, AGENT_CODE } = req.body;
     console.log(req.params.CUST_CODE);
@@ -358,7 +361,7 @@ app.put('/customer/:CUST_CODE', async (req,res) => {
  *       - Customer
  *     parameters:
  *       - in: path
- *         name: cust_code
+ *         name: CUST_CODE
  *         required: true
  *         description: customer code of the customer name to update
  *         schema:
