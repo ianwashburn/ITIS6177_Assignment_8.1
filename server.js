@@ -180,29 +180,29 @@ app.get('/customer', async (req, res) => {
  *           schema:
  *             type: object
  *             properties:
- *               cust_code:
+ *               CUST_CODE:
  *                 type: string
- *               cust_name:
+ *               CUST_NAME:
  *                 type: string
- *               cust_city:
+ *               CUST_CITY:
  *                 type: string
- *               working_area:
+ *               WORKING_AREA:
  *                 type: string
- *               cust_country:
+ *               CUST_COUNTRY:
  *                 type: string
- *               grade:
+ *               GRADE:
  *                 type: integer
- *               opening_amt:
+ *               OPENING_AMT:
  *                 type: integer
- *               recieve_amt:
+ *               RECEIVE_AMT:
  *                 type: integer
- *               payment_amt:
+ *               PAYMENT_AMT:
  *                 type: integer
- *               outstanding_amt:
+ *               OUTSTANDING_AMT:
  *                 type: integer
- *               phone_no:
+ *               PHONE_NO:
  *                 type: string
- *               agent_code:
+ *               AGENT_CODE:
  *                 type: string
  *     responses:
  *       201:
@@ -297,27 +297,27 @@ app.delete('/customer/:CUST_CODE', async (req, res) => {
  *           schema:
  *             type: object
  *             properties:
- *              cust_name:
+ *              CUST_NAME:
  *                type: string
- *              cust_city:
+ *              CUST_CITY:
  *                type: string
- *              working_area:
+ *              WORKING_AREA:
  *                type: string
- *              cust_country:
+ *              CUST_COUNTRY:
  *                type: string
- *              grade:
+ *              GRADE:
  *                type: integer
- *              opening_amt:
+ *              OPENING_AMT:
  *                type: integer
- *              recieve_amt:
+ *              RECEIVE_AMT:
  *                type: integer
- *              payment_amt:
+ *              PAYMENT_AMT:
  *                type: integer
- *              outstanding_amt:
+ *              OUTSTANDING_AMT:
  *                type: integer
- *              phone_no:
+ *              PHONE_NO:
  *                type: string
- *              agent_code:
+ *              AGENT_CODE:
  *                type: string
  *     responses:
  *       200:
@@ -374,7 +374,7 @@ app.put('/customer/:CUST_CODE', async (req,res) => {
  *           schema:
  *             type: object
  *             properties:
- *              cust_name:
+ *              CUST_NAME:
  *                type: string
  *     responses:
  *       200:
