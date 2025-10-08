@@ -401,6 +401,24 @@ app.patch('/customer/:CUST_CODE', async (req,res) => {
   }
 })
 
+const axios = require("axios");
+const AWS_FUNCTION = 'https://gxjyl5u5jfaqpgt5zgzqwqlmcy0gerho.lambda-url.us-east-2.on.aws/';
+
+app.get("/say", async (req, res, next) => {
+  try {
+    const keyword = String(req.query.keyword ?? "");
+    const url = `${AWS_FUNCTION}?keyword=${encodeURIComponent(keyword)}`;
+    const ar = await axios.get(url, { responseType: "text", timeout: 5000 });
+    res.status(200).type("text/plain").send(ar.data);
+  } catch (err) {
+    if (err.response) {
+      console.log(err);
+      res.status(500).send('Something broke!');
+    }
+    next(err);
+  }
+});
+
 app.listen(port, () => {
 	console.log('Example app listening at port http://localhost:${port}')
 });
